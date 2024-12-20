@@ -6,6 +6,12 @@
   <title>Road Trip 2025</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
+    :root {
+      --hero-gradient-start: #1e3c72;
+      --hero-gradient-end: #2a5298;
+      --primary-accent: #ff6f61;
+      --secondary-accent: #f9c846;
+    }
     body {
       background-color: #f8f9fa;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,80 +22,114 @@
       align-items: center;
       flex-direction: column;
       text-align: center;
-      padding: 80px;
-      background: linear-gradient(135deg, #343a40, #495057);
+      padding: 120px;
+      background: linear-gradient(135deg, var(--hero-gradient-start), var(--hero-gradient-end));
       color: white;
       border-bottom-left-radius: 50px;
       border-bottom-right-radius: 50px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1.5s ease-in;
     }
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
+      font-size: 4.5rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.7rem;
+      font-weight: 300;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .section {
-      padding: 50px 0;
+      padding: 60px 20px;
+    }
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.08);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
     }
     .image-section img {
       width: 100%;
       height: auto;
       object-fit: cover;
       border-radius: 12px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     }
-    .list-group-item img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-    h2 {
-      font-weight: bold;
+    .list-group-item {
+      border: none;
       margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, white, #f8f9fa);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s;
+    }
+    .list-group-item:hover {
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
     }
     .table {
       margin-top: 20px;
       background-color: white;
-      border-radius: 8px;
+      border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    footer {
+      padding: 20px 0;
+      background: linear-gradient(135deg, var(--hero-gradient-end), var(--hero-gradient-start));
+      color: white;
+      text-align: center;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      box-shadow: 0px -6px 15px rgba(0, 0, 0, 0.2);
+    }
+    footer p {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 300;
     }
   </style>
 </head>
 <body>
 <div class="hero">
-  <h1>2025 kick-off trip!</h1>
+  <h1>2025 Kick-Off Trip!</h1>
   <p>Starting January 2, 2025, at 2 PM</p>
 </div>
 
 <div class="container">
   <section class="section">
-    <h2>Accommodation</h2>
+    <h2 class="text-center mb-5" style="color: var(--primary-accent);">Accommodation</h2>
 
     <div class="card mb-4">
-      <div class="card-body">
-        <h5 class="card-title">Hunedoara: Vila Corvinia</h5>
+      <div class="card-body text-center">
+        <h5 class="card-title">Hunedoara: Vila Corviniana</h5>
         <a href="https://www.booking.com/hotel/ro/vila-corviniana.html" target="_blank">
-          <img src="corvinia.jpg" alt="Vila Corvinia Image" class="img-fluid">
+          <img src="corviniana.jpg" alt="Vila Corvinia Image" class="img-fluid" loading="lazy">
         </a>
       </div>
     </div>
 
     <div class="card mb-4">
-      <div class="card-body">
+      <div class="card-body text-center">
         <h5 class="card-title">Timișoara: Urban Budget Hotel</h5>
         <a href="https://www.booking.com/hotel/ro/urban-budget.html" target="_blank">
-          <img src="budget.jpg" alt="Urban Budget Hotel Image" class="img-fluid">
+          <img src="budget.jpg" alt="Urban Budget Hotel Image" class="img-fluid" loading="lazy">
         </a>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <h2>Itinerary</h2>
+    <h2 class="text-center mb-5" style="color: var(--secondary-accent);">Itinerary</h2>
     <ul class="list-group">
       <li class="list-group-item">
         <strong>Day 1 (January 2):</strong>
@@ -147,9 +187,9 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<footer class="text-center mt-5">
-  <p class="text-muted">Disclaimer: All reservations have been made. 😅😬</p>
-  <p class="text-muted">PS: No killerino pls.</p>
+<footer>
+  <p>Disclaimer: All reservations have been made. 😅😬</p>
+  <p>PS: No killerino pls.</p>
 </footer>
 </body>
 </html>
